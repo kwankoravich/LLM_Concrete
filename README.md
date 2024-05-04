@@ -1,5 +1,6 @@
 # Question Answering for Concrete technology with LLMs (POC)
-Explore a POC merging Large Language Models with a chatbot for Concrete Technology. Leveraging advanced NLP, it offers interactive learning and precise insights. Join us in advancing AI in specialized domains!
+
+This repository hosts a Proof of Concept (POC) project integrating Large Language Models (LLM) with a chatbot tailored for the domain of Concrete Technology. This innovative project aims to leverage cutting-edge natural language processing (NLP) techniques to provide intelligent conversational interfaces for professionals and enthusiasts in the field of concrete science and engineering.
 
 ## Installation
 
