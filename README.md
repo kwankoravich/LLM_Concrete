@@ -15,3 +15,25 @@ Then, install the dependencies:
 ```bash
 pip install -r requirements.txt
 ```
+
+## Data Folder
+Create a folder named `data` in the root directory of the project. This is where you should store your dataset files.
+
+## Environment Variables
+Before running the application, make sure to declare the following environment variables in a .env file:
+
+```bash
+OPENAI_API_KEY=your_openai_api_key
+GOOGLE_API_KEY=your_google_api_key
+```
+
+Replace your_openai_api_key and your_google_api_key with your actual API keys.
+
+## Usage
+To run the application, execute the following command:
+
+```bash
+streamlit run app.py
+```
+This will start the application and open it in your default web browser.
+
