@@ -7,7 +7,7 @@ This repository hosts a Proof of Concept (POC) project integrating Large Languag
 You can install the required dependencies using pip. First, clone this repository:
 
 ```bash
-git clone https://github.com/your_username/your_repository.git
+git clone <This Repository>
 cd your_repository
 ```
 
