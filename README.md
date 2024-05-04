@@ -34,7 +34,7 @@ Replace your_openai_api_key and your_google_api_key with your actual API keys.
 To run the application, execute the following command:
 
 ```bash
-streamlit run app.py
+streamlit run main.py
 ```
 This will start the application and open it in your default web browser.
 
