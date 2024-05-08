@@ -2,6 +2,7 @@ import streamlit as st
 import openai
 from llama_index.llms.openai import OpenAI
 from llama_index.llms.gemini import Gemini
+from llama_index.embeddings.gemini import GeminiEmbedding
 from llama_index.core import (
     VectorStoreIndex, 
     ServiceContext, 
@@ -16,7 +17,7 @@ dotenv.load_dotenv()
 
 
 st.set_page_config(page_title="Chat with the Streamlit docs, powered by LlamaIndex", page_icon="🦙", layout="centered", initial_sidebar_state="auto", menu_items=None)
-openai.api_key = st.secrets.openai_key
+# openai.api_key = st.secrets.openai_key
 GOOGLE_API_KEY=os.environ.get('GOOGLE_API_KEY')
 genai.configure(api_key=GOOGLE_API_KEY)
 
@@ -34,7 +35,10 @@ def load_data():
         # llm = OpenAI(model="gpt-3.5-turbo", temperature=0.5, system_prompt="You are an expert o$
         # index = VectorStoreIndex.from_documents(docs)
         # service_context = ServiceContext.from_defaults(llm=OpenAI(model="gpt-3.5-turbo", temperature=0.5, system_prompt="You are an expert on the Streamlit Python library and your job is to answer technical questions. Assume that all questions are related to the Streamlit Python library. Keep your answers technical and based on facts – do not hallucinate features."))
-        service_context = ServiceContext.from_defaults(llm = Gemini(model="models/gemini-pro"))
+        embed_model = GeminiEmbedding(
+            model_name="models/embedding-001", title="this is a document"
+            )
+        service_context = ServiceContext.from_defaults(llm = Gemini(model="models/gemini-pro"), embed_model=embed_model,)
         index = VectorStoreIndex.from_documents(docs, service_context=service_context)
         return index
 
